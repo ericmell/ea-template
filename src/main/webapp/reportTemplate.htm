@@ -1,0 +1,23 @@
+<html> 
+
+<body> 
+<script language="javascript"> 
+
+var year=Date().getFullYear();//年
+var month = Date().getMonth();
+
+document.write(getDayNumByYearMonth(year,month));
+
+function getDayNumByYearMonth(year,month){
+	var daysInMonth = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+	if(month==1){
+		var days=((0==year%4)&&(0!=(year%100)))||(0==year%400)?29:28;
+	}else{
+		var days=daysInMonth[month];
+	}
+	return days;
+}
+
+</script> 
+</body> 
+</html>
